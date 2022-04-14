@@ -1,0 +1,65 @@
+body {
+	margin: 0;
+	height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.board {
+	width: 1000px;
+	height: 700px;
+
+	background-image: url(../img/bg.jpeg);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: cover;
+
+	position: relative;
+	overflow: hidden; /*убрали поле с платформами, но оно длинее борда*/
+}
+
+.pet {
+	width: 96px;
+	height: 73px;
+
+	background-image: url('../img/el.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom;
+
+	position: absolute;
+
+	transition: .2s linear;
+	transition-property: transform, top;
+	z-index: 10;
+}
+
+.pet.left {
+	transform: scale(1,1);
+}
+
+.pet.right {
+	transform: scale(-1,1);
+}
+
+.plBlock {
+	height: 100%;
+	
+	/* background-color: #f004; */
+	
+	position: absolute;
+	z-index: 1;
+}
+
+.platform {
+	width: 100px;
+	height: 50px;
+
+	position: absolute;
+	background-image: url('../img/plt.png');
+	background-size: contain;
+
+	transition: transform .5s linear;
+}
